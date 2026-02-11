@@ -4,6 +4,8 @@ import {
   type ElementType,
 } from "react";
 
+import { twMerge } from "tailwind-merge";
+
 interface ButtonRootProps {
   children: ReactNode;
 }
@@ -17,9 +19,23 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "dashboard";
 }
 
-export const Button = ({ children, ...props }: ButtonProps) => {
+const buttonVariants = {
+  dashboard:
+    "hover:bg-[#6467F2] hover:cursor-pointer text-white p-4 w-full mt-4 rounded-md",
+};
+
+export const Button = ({
+  children,
+  variant = "dashboard",
+  ...props
+}: ButtonProps) => {
+  const classes = twMerge(
+    "transition-colors font-medium",
+    buttonVariants[variant],
+  );
+
   return (
-    <button {...props} className="hover:cursor-pointer">
+    <button {...props} className={classes}>
       {children}
     </button>
   );
