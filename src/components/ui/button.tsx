@@ -14,24 +14,27 @@ export const ButtonRoot = ({ children }: ButtonRootProps) => {
   return <div>{children}</div>;
 };
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
-  variant?: "dashboard";
-}
-
 const buttonVariants = {
   dashboard:
-    "hover:bg-[#6467F2] hover:cursor-pointer text-white p-4 w-full mt-4 rounded-md",
+    "hover:bg-indigo-600 hover:cursor-pointer text-white p-4 w-full mt-4 rounded-md",
 };
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+  variant?: keyof typeof buttonVariants;
+  className?: string;
+}
 
 export const Button = ({
   children,
   variant = "dashboard",
+  className,
   ...props
 }: ButtonProps) => {
   const classes = twMerge(
     "transition-colors font-medium",
     buttonVariants[variant],
+    className,
   );
 
   return (
