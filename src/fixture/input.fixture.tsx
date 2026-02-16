@@ -1,5 +1,5 @@
-import { InputRoot, Input, InputIcon } from "../components/ui/input";
-import { Search } from "lucide-react";
+import { InputRoot, Input, InputIcon } from '@components/ui/input';
+import { Search } from 'lucide-react';
 
 const InputFixture = () => {
   return (

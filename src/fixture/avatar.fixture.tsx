@@ -4,7 +4,7 @@ import {
   AvatarName,
   AvatarRole,
   AvatarImage,
-} from "../components/ui/avatar";
+} from '@components/ui/avatar';
 
 const AvatarFixture = () => {
   return (

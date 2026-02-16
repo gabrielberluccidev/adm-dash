@@ -1,9 +1,9 @@
-import { ButtonRoot, Button } from "../components/ui/button";
+import { ButtonRoot, Button } from '@components/ui/button';
 
 const ButtonFixture = () => {
   return (
-    <ButtonRoot>
-      <Button onClick={() => alert("po")}>oi</Button>
+    <ButtonRoot variant="dashboard">
+      <Button onClick={() => alert('po')}>oi</Button>
     </ButtonRoot>
   );
 };

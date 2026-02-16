@@ -1,13 +1,13 @@
-import { HeaderContent, HeaderRoot } from "../components/layout/header";
+import { HeaderContent, HeaderRoot } from '@components/layout/header';
 import {
   AvatarImage,
   AvatarName,
   AvatarRole,
   AvatarRoot,
   AvatarUserWrapper,
-} from "../components/ui/avatar";
-import { InputRoot, Input, InputIcon } from "../components/ui/input";
-import { Search, Bell } from "lucide-react";
+} from '@components/ui/avatar';
+import { InputRoot, Input, InputIcon } from '@components/ui/input';
+import { Search, Bell } from 'lucide-react';
 
 const HeaderFixture = () => {
   return (
