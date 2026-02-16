@@ -1,53 +1,43 @@
 import {
   type ButtonHTMLAttributes,
   type ReactNode,
-  type ElementType,
-} from "react";
+  // type ElementType,
+} from 'react';
 
-import { twMerge } from "tailwind-merge";
+import { twMerge } from 'tailwind-merge';
 
 interface ButtonRootProps {
-  children: ReactNode;
-}
-
-export const ButtonRoot = ({ children }: ButtonRootProps) => {
-  return <div>{children}</div>;
-};
-
-const buttonVariants = {
-  dashboard:
-    "hover:bg-indigo-600 hover:cursor-pointer text-white p-4 w-full mt-4 rounded-md",
-};
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: keyof typeof buttonVariants;
   className?: string;
 }
 
-export const Button = ({
+const buttonVariants = {
+  dashboard: `hover:bg-indigo-600 hover:cursor-pointer 
+    text-white p-4 w-full mt-4 rounded-md text-start flex items-center gap-2`,
+};
+
+export const ButtonRoot = ({
   children,
-  variant = "dashboard",
+  variant = 'dashboard',
   className,
-  ...props
-}: ButtonProps) => {
+}: ButtonRootProps) => {
   const classes = twMerge(
-    "transition-colors font-medium",
+    'transition-colors font-medium',
     buttonVariants[variant],
     className,
   );
+  return <div className={classes}>{children}</div>;
+};
 
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+}
+
+export const Button = ({ children, ...props }: ButtonProps) => {
   return (
-    <button {...props} className={classes}>
+    <button className="hover:cursor-pointer" {...props}>
       {children}
     </button>
   );
-};
-
-interface ButtonIconProps {
-  icon: ElementType;
-}
-
-export const ButtonIcon = ({ icon: Icon }: ButtonIconProps) => {
-  return <Icon className="text-zinc-200 absolute self-center ml-2" />;
 };
