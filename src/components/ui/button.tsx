@@ -15,6 +15,10 @@ interface ButtonRootProps {
 const buttonVariants = {
   dashboard: `hover:bg-indigo-600 hover:cursor-pointer 
     text-white p-4 w-full mt-4 rounded-md text-start flex items-center gap-2`,
+  filter: `hover:cursor-pointer border-slate-700 border-1
+    text-white p-4 w-40 mt-4 rounded-md text-start flex items-center gap-2`,
+  add: `hover:cursor-pointer bg-indigo-600 rounded-md
+    text-white p-4 w-40 mt-4 text-start flex items-center gap-2`,
 };
 
 export const ButtonRoot = ({
