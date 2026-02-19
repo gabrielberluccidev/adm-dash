@@ -5,7 +5,7 @@ interface SideBarRootProps {
 }
 
 export const SideBarRoot = ({ children }: SideBarRootProps) => {
-  return <div className="bg-[#1A1C2E] h-vh w-80 p-6">{children}</div>;
+  return <div className="bg-[#1A1C2E] h-dvw w-80 p-6">{children}</div>;
 };
 
 interface SideBarHeaderRootProps {
