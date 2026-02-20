@@ -47,10 +47,7 @@ interface TableHeadProps extends ThHTMLAttributes<HTMLTableCellElement> {
 
 export const TableHead = ({ children, ...props }: TableHeadProps) => {
   return (
-    <th
-      className="text-slate-400 pt-4 pb-4 pl-10 pr-10 align-middle "
-      {...props}
-    >
+    <th className="text-slate-400 p-8 align-middle " {...props}>
       {children}
     </th>
   );
@@ -67,9 +64,9 @@ export const TableBody = ({ children }: TableBodyProps) => {
 const tableDataVariants = {
   default: 'text-slate-400',
   productName: 'text-slate-50',
-  inStock: 'bg-[#192C36] rounded-full text-[#10B880]',
-  outOfStock: 'bg-red-500 rounded-full',
-  category: 'bg-[#1E293B] text-slate-200 rounded-full ',
+  inStock: 'bg-[#192C36] rounded-full text-[#10B880] whitespace-nowrap',
+  outOfStock: 'bg-red-500 rounded-full whitespace-nowrap',
+  category: 'bg-[#1E293B] text-slate-200 rounded-full whitespace-nowrap',
 };
 
 interface TableDataProps {
