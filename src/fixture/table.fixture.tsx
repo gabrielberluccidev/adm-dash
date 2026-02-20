@@ -13,8 +13,20 @@ import {
   TableContent,
 } from '@components/ui/table';
 import { Funnel, Plus } from 'lucide-react';
+import axios from 'axios';
+import { useState } from 'react';
 
 const TableFixture = () => {
+  interface Data {
+    id: number;
+    title: string;
+    price: number;
+    category: string;
+    image: string;
+  }
+
+  const [data, setData] = useState<Data[] | null>(null);
+
   const mockApiData = [
     {
       id: 0,
@@ -32,6 +44,14 @@ const TableFixture = () => {
       image: 'http://example.com',
     },
   ];
+
+  const api = () => {
+    axios
+      .get('https://fakestoreapi.com/products')
+      .then((response) => setData(response.data));
+  };
+
+  console.log(data);
 
   return (
     <TableRoot>
@@ -78,6 +98,9 @@ const TableFixture = () => {
           );
         })}
       </TableContent>
+      <ButtonRoot>
+        <Button onClick={() => api()}>MOCK</Button>
+      </ButtonRoot>
     </TableRoot>
   );
 };
