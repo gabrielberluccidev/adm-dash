@@ -7,7 +7,9 @@ interface CardRootProps {
 
 export const CardRoot = ({ children }: CardRootProps) => {
   return (
-    <div className="w-80 p-6 bg-[#1A1C2E] rounded-sm border">{children}</div>
+    <div className="w-80 p-6 bg-[#1A1C2E] rounded-xl border h-40">
+      {children}
+    </div>
   );
 };
 
