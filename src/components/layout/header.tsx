@@ -1,11 +1,11 @@
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 interface HeaderRootProps {
   children: ReactNode;
 }
 
 export const HeaderRoot = ({ children }: HeaderRootProps) => {
-  return <header>{children}</header>;
+  return <header className="border-[#2C2F4B] border-2">{children}</header>;
 };
 
 interface HeaderContentProps {
